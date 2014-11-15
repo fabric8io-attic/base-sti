@@ -5,6 +5,7 @@ MAINTAINER iocanel@gmail.com
 ENV MAVEN_MAJOR 3
 ENV MAVEN_VERSION 3.2.3
 ENV DEPLOY_DIR /opt/jboss/deploy
+ENV STI_SCRIPTS_URL https://raw.githubusercontent.com/fabric8io/base-sti/master/.sti/bin/
 USER root
 
 RUN yum -y install wget \
