@@ -1,3 +1,3 @@
 #!/bin/bash
 
-deploy-and-run.sh
+deploy-and-start

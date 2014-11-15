@@ -2,10 +2,13 @@
 
 if [ -z "$1" ]; then
   exec /usr/bin/usage
-fi
-
-if [ "$1" != "run" -a "$1" != "save-artifacts" ]; then
+elif [ "$1" == "deploy-and-start" ]; then
+  echo "Deploying and starting application container"
+  exec /usr/bin/deploy-and-start
+elif [ "$1" != "run" -a "$1" != "save-artifacts" ]; then
   tar -C /tmp -xf -
+  exec /tmp/scripts/$1
+else 
+  exec /tmp/scripts/$1
 fi
 
-exec /tmp/scripts/$1
