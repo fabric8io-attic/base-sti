@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+pushd ${HOME} >/dev/null
+
+# /opt/maven/repository is the maven repo dir
+tar cf - ./.m2
+
+popd >/dev/null

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cat <<EOF
+This is a STI base image responsible for consuming a Java/Maven
+and deploying it onto the targete application container.
+To use it, install STI: https://github.com/openshift/source-to-image.
+
+Details:
+If a pom.xml is present in the source directory, the project is built with maven and the
+output in target will be copied into the /maven directory.
+EOF
