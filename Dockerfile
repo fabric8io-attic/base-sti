@@ -3,13 +3,14 @@ FROM jboss/base-jdk:7
 MAINTAINER iocanel@gmail.com
 
 ENV MAVEN_MAJOR 3
-ENV MAVEN_VERSION 3.2.3
+ENV MAVEN_VERSION 3.2.5
 ENV DEPLOY_DIR /opt/jboss/deploy
 ENV STI_SCRIPTS_URL https://raw.githubusercontent.com/fabric8io/base-sti/master/.sti/bin/
+ENV STI_LOCATION /tmp
 USER root
 
 RUN yum -y install wget \
-  && wget -q -O - http://www.us.apache.org/dist/maven/maven-$MAVEN_MAJOR/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -xzf - -C /opt/jboss \
+  && wget -q -O - http://www.apache.org/dist/maven/maven-$MAVEN_MAJOR/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -xzf - -C /opt/jboss \
   && mv /opt/jboss/apache-maven-$MAVEN_VERSION /opt/jboss/maven \
   && mkdir -p /opt/jboss/deploy \
   && chown -R jboss:jboss /opt/jboss \
@@ -23,4 +24,4 @@ VOLUME ["/opt/maven/repository"]
 
 USER jboss
 
-CMD ["/usr/bin/sti-helper"]
+CMD ["/usr/bin/usage"]
