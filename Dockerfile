@@ -5,8 +5,8 @@ MAINTAINER iocanel@gmail.com
 ENV MAVEN_MAJOR 3
 ENV MAVEN_VERSION 3.2.5
 ENV DEPLOY_DIR /opt/jboss/deploy
-LABEL io.s2i.scripts-url https://raw.githubusercontent.com/fabric8io/base-sti/master/.sti/bin/
-LABEL io.s2i.destination /tmp
+LABEL io.openshift.s2i.scripts-url https://raw.githubusercontent.com/fabric8io/base-sti/master/.sti/bin/
+LABEL io.openshift.s2i.destination /tmp
 USER root
 
 RUN curl http://www.apache.org/dist/maven/maven-$MAVEN_MAJOR/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar -xzf - -C /opt/jboss \
