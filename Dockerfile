@@ -14,7 +14,8 @@ RUN curl http://www.apache.org/dist/maven/maven-$MAVEN_MAJOR/$MAVEN_VERSION/bina
   && mkdir -p /opt/jboss/deploy \
   && chown -R jboss:jboss /opt/jboss \
   && chmod -R 755 /opt/jboss/maven/ \
-  && ln -sf /opt/jboss/maven/bin/mvn /usr/local/bin/mvn
+  && ln -sf /opt/jboss/maven/bin/mvn /usr/local/bin/mvn \
+  && yum install -y wget
 
 # Configure Source-To-Image scripts
 ADD ./bin /usr/bin/
